@@ -1,1 +1,1 @@
-# vuex-example
+# vuex-toy-todolist-app
