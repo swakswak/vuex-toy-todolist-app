@@ -1,6 +1,12 @@
 <template>
-  <TaskAdder/>
-  <TodoList/>
+  <div class="todo-wrap">
+    <div class="new-task-form-wrap">
+      <TaskAdder/>
+    </div>
+    <div class="todo-table-wrap">
+      <TodoList/>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -13,8 +19,7 @@ export default {
     TodoList,
     TaskAdder
   },
-  methods: {
-  }
+  methods: {}
 }
 </script>
 
@@ -26,5 +31,16 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.todo-wrap > div {
+  display: inline-block;
+}
+
+.todo-wrap {
+  text-align: center;
+}
+
+.new-task-form-wrap {
+  padding-bottom: 6px;
 }
 </style>

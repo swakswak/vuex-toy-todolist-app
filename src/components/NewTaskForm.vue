@@ -1,12 +1,25 @@
 <template>
-  <input
-      v-model="newTask"
-      placeholder="새로운 할 일 추가"
-      type="text"
-      @keydown.enter="addToStoreTodos"
-  >
-  <button @click="addToStoreTodos">추가</button>
+  <div class="todo-input-text-wrap">
+    <input
+        v-model="newTask"
+        class="todo-input-text"
+        placeholder="새로운 할 일 추가"
+        type="text"
+        @keydown.enter="addToStoreTodos"
+    >
+    <button @click="addToStoreTodos">추가</button>
+  </div>
 </template>
+
+<style>
+.todo-input-text-wrap {
+  text-align: left;
+}
+
+.todo-input-text {
+  width: 600px;
+}
+</style>
 
 <script>
 import {mapMutations} from "vuex";
@@ -27,13 +40,11 @@ export default {
         alert("할 일은 빈 값 또는 공백일 수 없습니다.");
         return;
       }
-      console.log("newTask", this.newTask);
       this.addTask({
         task: this.newTask,
         isDone: false,
         createdDate: new Date()
       });
-      console.log("todos", this.$store.getters.todos);
       this.newTask = '';
     }
   },
