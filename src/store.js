@@ -1,9 +1,21 @@
-import { createStore } from "vuex";
+import {createStore} from "vuex";
 
-export default createStore({
+const store = createStore({
     state() {
         return {
-
+            todos: []
         }
     },
+    getters: {
+        todos(state) {
+            return state.todos;
+        }
+    },
+    mutations: {
+        addTask(state, task) {
+            return state.todos.push(task);
+        }
+    }
 })
+
+export default store;

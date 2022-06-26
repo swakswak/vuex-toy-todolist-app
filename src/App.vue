@@ -1,15 +1,16 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <TaskAdder/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TaskAdder from "@/components/TaskAdder";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TaskAdder
+  },
+  methods: {
   }
 }
 </script>
