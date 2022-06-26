@@ -1,13 +1,16 @@
 <template>
   <TaskAdder/>
+  <TodoList/>
 </template>
 
 <script>
-import TaskAdder from "@/components/TaskAdder";
+import TaskAdder from "@/components/NewTaskForm";
+import TodoList from "@/components/TodoList";
 
 export default {
   name: 'App',
   components: {
+    TodoList,
     TaskAdder
   },
   methods: {
