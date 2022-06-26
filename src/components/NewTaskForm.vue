@@ -5,7 +5,7 @@
         class="todo-input-text"
         placeholder="새로운 할 일 추가"
         type="text"
-        @keydown.enter="addToStoreTodos"
+        @keypress.enter="addToStoreTodos"
     >
     <button @click="addToStoreTodos">추가</button>
   </div>
@@ -36,6 +36,7 @@ export default {
     ...mapMutations(['addTask']),
 
     addToStoreTodos() {
+      console.log(this.newTask)
       if (validator.isBlank(this.newTask)) {
         alert("할 일은 빈 값 또는 공백일 수 없습니다.");
         return;

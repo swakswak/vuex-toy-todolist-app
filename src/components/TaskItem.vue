@@ -46,7 +46,7 @@ export default {
   methods: {
     ...mapMutations(["toggleDone"]),
     toFormattedString(date) {
-      return moment(date).format("YY/MM/DD hh:mm");
+      return moment(date).format("YY/MM/DD HH:mm");
     },
     onChecked(task) {
       this.toggleDone(task);
