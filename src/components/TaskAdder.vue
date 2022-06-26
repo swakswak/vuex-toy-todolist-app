@@ -10,6 +10,7 @@
 
 <script>
 import {mapMutations} from "vuex";
+import validator from "@/support/validator";
 
 export default {
   data() {
@@ -21,14 +22,8 @@ export default {
   methods: {
     ...mapMutations(['addTask']),
 
-    isBlank(stringValue) {
-      return stringValue === undefined
-          || stringValue === null
-          || stringValue.replace(" ", "") === "";
-    },
-
     addToStoreTodos() {
-      if (this.isBlank(this.newTask)) {
+      if (validator.isBlank(this.newTask)) {
         alert("할 일은 빈 값 또는 공백일 수 없습니다.");
         return;
       }
